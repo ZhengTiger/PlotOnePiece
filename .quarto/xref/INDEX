@@ -4,5 +4,11 @@
   },
   "about.qmd": {
     "about.html": "7d0838b8"
+  },
+  "CNSplot.qmd": {
+    "CNSplot.html": "d076ae02"
+  },
+  "sciRplot.qmd": {
+    "sciRplot.html": "f75d2840"
   }
 }

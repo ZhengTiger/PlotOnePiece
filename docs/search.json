@@ -12,5 +12,12 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "CNSplot.html",
+    "href": "CNSplot.html",
+    "title": "CNSplot",
+    "section": "",
+    "text": "This is a Quarto website."
   }
 ]

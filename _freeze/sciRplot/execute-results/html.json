@@ -1,0 +1,21 @@
+{
+  "hash": "df983e67117272843b2f9b730323729c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"sciRplot\"\n---\n\n## 其他可视化工具\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n```{=html}\n<div id=\"htmlwidget-e79976324ab7eb5f6172\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-e79976324ab7eb5f6172\">{\"x\":{\"path\":[\"images/sciRplot/01.png\",\"images/sciRplot/02.png\",\"images/sciRplot/03.png\",\"images/sciRplot/04.png\",\"images/sciRplot/05.png\"],\"caption\":[\"<div style='line-height:0.1;'><div style='font-size:1.0rem;margin-bottom:0.2em;line-height:1;color:#34495e;'><b>折线图-基础<\\/b><\\/div><div style='line-height:1.2;font-size:0.7rem;color:#808b96;'>公众号：代码+复现步骤<\\/div><\\/div>\",\"<div style='line-height:0.1;'><div style='font-size:1.0rem;margin-bottom:0.2em;line-height:1;color:#34495e;'><b>折线图-平滑<\\/b><\\/div><div style='line-height:1.2;font-size:0.7rem;color:#808b96;'>公众号：代码+复现步骤<\\/div><\\/div>\",\"<div style='line-height:0.1;'><div style='font-size:1.0rem;margin-bottom:0.2em;line-height:1;color:#34495e;'><b>折线图-分组<\\/b><\\/div><div style='line-height:1.2;font-size:0.7rem;color:#808b96;'>公众号：代码+复现步骤<\\/div><\\/div>\",\"<div style='line-height:0.1;'><div style='font-size:1.0rem;margin-bottom:0.2em;line-height:1;color:#34495e;'><b>折线图-置信区间<\\/b><\\/div><div style='line-height:1.2;font-size:0.7rem;color:#808b96;'>公众号：代码+复现步骤<\\/div><\\/div>\",\"<div style='line-height:0.1;'><div style='font-size:1.0rem;margin-bottom:0.2em;line-height:1;color:#34495e;'><b>折线图-误差棒<\\/b><\\/div><div style='line-height:1.2;font-size:0.7rem;color:#808b96;'>公众号：代码+复现步骤<\\/div><\\/div>\"],\"caption_valign\":\"below\",\"caption_halign\":\"center\",\"link\":[\"https://mp.weixin.qq.com/s/P5Xxi5A_CwVSqfs9YTYykg\",\"https://mp.weixin.qq.com/s/ad9_lSiUocNc0X6OeB3iPw\",\"https://mp.weixin.qq.com/s/dGfLcyKR1jDdPTmXmPc_tw\",\"https://mp.weixin.qq.com/s/u04UkXPjfbSmGWlfXqEJGQ\",\"https://mp.weixin.qq.com/s/2YhsYR__zzjl8iSVvMXr-Q\"],\"h\":\"250px\",\"w\":\"250px\",\"gap\":\"10px\",\"border_radius\":\"10px\",\"layout\":\"fixed\",\"shuffle\":false},\"evals\":[],\"jsHooks\":[]}</script>\n```\n\n:::\n:::\n",
+    "supporting": [
+      "sciRplot_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"site_libs/simplelightbox-2.1.0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/simplelightbox-2.1.0/js/simplelightbox.js\"></script>\n<link href=\"site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/pixgallery-binding-0.1.0/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

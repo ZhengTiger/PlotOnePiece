@@ -8,7 +8,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: sciRplot.qmd
+      - href: CNSplot.qmd
+      
 
 format:
   html:

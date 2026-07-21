@@ -10,11 +10,11 @@ title: "sciRplot"
 library(pixture)
 
 paths <- c(
-  "./images/sciRplot/01.png",
-  "./images/sciRplot/02.png",
-  "./images/sciRplot/03.png",
-  "./images/sciRplot/04.png",
-  "./images/sciRplot/05.png"
+  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/01.png",
+  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/02.png",
+  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/03.png",
+  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/04.png",
+  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/05.png"
 )
 
 title <- c(
@@ -35,7 +35,7 @@ link <- c(
 
 captions <- paste0(
   "<div style='line-height:0.1;'>",
-  paste0("<div style='font-size:0.8rem;margin-bottom:0.0rem;line-height:1;color:#34495e;'><b>", title, "</b></div>"),
+  paste0("<div style='font-size:0.8rem;margin-bottom:0.0rem;line-height:0.5;color:#34495e;'><b>", title, "</b></div>"),
   "</div>"
 )
 
@@ -45,7 +45,7 @@ pixgallery(
   caption_valign = "below",
   caption_halign = "center",
   link = link,
-  h = "150px",
+  h = "120px",
   w = "150px", 
   border_radius = "10px",
   gap = "10px",

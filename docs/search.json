@@ -19,5 +19,19 @@
     "title": "CNSplot",
     "section": "",
     "text": "This is a Quarto website."
+  },
+  {
+    "objectID": "sciRplot.html",
+    "href": "sciRplot.html",
+    "title": "sciRplot",
+    "section": "",
+    "text": "pixgallery(\n  path = paths,\n  caption = captions,\n  caption_valign = \"below\",\n  caption_halign = \"center\",\n  link = link,\n  h = \"120px\",\n  w = \"150px\", \n  border_radius = \"10px\",\n  gap = \"10px\",\n  layout = \"fixed\"\n)"
+  },
+  {
+    "objectID": "sciRplot.html#折线图",
+    "href": "sciRplot.html#折线图",
+    "title": "sciRplot",
+    "section": "",
+    "text": "pixgallery(\n  path = paths,\n  caption = captions,\n  caption_valign = \"below\",\n  caption_halign = \"center\",\n  link = link,\n  h = \"120px\",\n  w = \"150px\", \n  border_radius = \"10px\",\n  gap = \"10px\",\n  layout = \"fixed\"\n)"
   }
 ]

@@ -2,42 +2,26 @@
 title: "sciRplot"
 ---
 
-## 折线图
-
 ```{r}
 #| echo: false
 
 library(pixture)
 
-paths <- c(
-  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/01.png",
-  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/02.png",
-  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/03.png",
-  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/04.png",
-  "https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/05.png"
-)
-
-title <- c(
-  "折线图-基础",
-  "折线图-平滑",
-  "折线图-分组",
-  "折线图-置信区间",
-  "折线图-误差棒"
-)
-
-link <- c(
-  "https://mp.weixin.qq.com/s/P5Xxi5A_CwVSqfs9YTYykg",
-  "https://mp.weixin.qq.com/s/ad9_lSiUocNc0X6OeB3iPw",
-  "https://mp.weixin.qq.com/s/dGfLcyKR1jDdPTmXmPc_tw",
-  "https://mp.weixin.qq.com/s/u04UkXPjfbSmGWlfXqEJGQ",
-  "https://mp.weixin.qq.com/s/2YhsYR__zzjl8iSVvMXr-Q"
-)
-
+scirplot <- read.csv("files/sciRplot.csv")
+title <- scirplot$title
+paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRplot/", scirplot$image, sep="")
+link <- scirplot$link
 captions <- paste0(
   "<div style='line-height:0.1;'>",
   paste0("<div style='font-size:0.8rem;margin-bottom:0.0rem;line-height:0.5;color:#34495e;'><b>", title, "</b></div>"),
   "</div>"
 )
+```
+
+## 折线图
+
+```{r}
+#| echo: false
 
 pixgallery(
   path = paths,

@@ -19,6 +19,12 @@ format:
       - brand
     css: styles.css
     toc: true
+    toc-location: left
+    grid:
+      sidebar-width: 200px
+      body-width: 1200px
+      margin-width: 100px
+      gutter-width: 1.5rem
 
 execute:
   freeze: auto

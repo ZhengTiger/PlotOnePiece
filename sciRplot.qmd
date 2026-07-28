@@ -1,5 +1,6 @@
 ---
 title: "sciRplot"
+toc-title: "绘图分类"
 ---
 
 ```{r}
@@ -13,26 +14,118 @@ paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/h
 link <- scirplot$link
 captions <- paste0(
   "<div style='line-height:0.1;'>",
-  paste0("<div style='font-size:0.8rem;margin-bottom:0.0rem;line-height:0.5;color:#34495e;'><b>", title, "</b></div>"),
+  paste0("<div style='font-size:1rem;margin-bottom:0.0rem;line-height:1;color:#34495e;'><b>", title, "</b></div>"),
   "</div>"
 )
 ```
 
-## 折线图
+```{css}
+#| echo: false
+
+.pixgallery-caption-below {
+    background: #c8e5ba;
+    margin-top: 5px;
+}
+```
+
+## {{< fa chart-line >}} 折线图
 
 ```{r}
 #| echo: false
 
+index <- c(1:5)
+path_line <- paths[index]
+caption_line <- captions[index]
+link_line <- link[index]
+
 pixgallery(
-  path = paths,
-  caption = captions,
+  path = path_line,
+  caption = caption_line,
   caption_valign = "below",
   caption_halign = "center",
-  link = link,
-  h = "120px",
-  w = "150px", 
+  link = link_line,
+  h = "150px",
+  w = "200px", 
   border_radius = "10px",
-  gap = "10px",
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa braille >}} 散点图
+
+```{r}
+#| echo: false
+
+index <- c(6:10,71)
+path_scatter <- paths[index]
+caption_scatter <- captions[index]
+link_scatter <- link[index]
+
+pixgallery(
+  path = path_scatter,
+  caption = caption_scatter,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_scatter,
+  h = "180px",
+  w = "250px", 
+  border_radius = "10px",
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa chart-simple >}} 柱状图
+
+```{r}
+#| echo: false
+
+index <- c(11:15,66)
+path_bar <- paths[index]
+caption_bar <- captions[index]
+link_bar <- link[index]
+
+pixgallery(
+  path = path_bar,
+  caption = caption_bar,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_bar,
+  h = "180px",
+  w = "250px", 
+  border_radius = "10px",
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa box >}} 箱线图
+
+```{r}
+#| echo: false
+
+index <- c(16:20,67)
+path_box <- paths[index]
+caption_box <- captions[index]
+link_box <- link[index]
+
+pixgallery(
+  path = path_box,
+  caption = caption_box,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_box,
+  h = "180px",
+  w = "250px", 
+  border_radius = "10px",
+  gap = "20px",
   layout = "fixed"
 )
 ```

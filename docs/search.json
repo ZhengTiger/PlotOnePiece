@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PlotOnePiece",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "开发中…"
   },
   {
     "objectID": "about.html",
@@ -25,13 +25,34 @@
     "href": "sciRplot.html",
     "title": "sciRplot",
     "section": "",
-    "text": "pixgallery(\n  path = paths,\n  caption = captions,\n  caption_valign = \"below\",\n  caption_halign = \"center\",\n  link = link,\n  h = \"120px\",\n  w = \"150px\", \n  border_radius = \"10px\",\n  gap = \"10px\",\n  layout = \"fixed\"\n)"
+    "text": ".pixgallery-caption-below {\n    background: #c8e5ba;\n}"
   },
   {
     "objectID": "sciRplot.html#折线图",
     "href": "sciRplot.html#折线图",
     "title": "sciRplot",
-    "section": "",
-    "text": "pixgallery(\n  path = paths,\n  caption = captions,\n  caption_valign = \"below\",\n  caption_halign = \"center\",\n  link = link,\n  h = \"120px\",\n  w = \"150px\", \n  border_radius = \"10px\",\n  gap = \"10px\",\n  layout = \"fixed\"\n)"
+    "section": " 折线图",
+    "text": "折线图"
+  },
+  {
+    "objectID": "sciRplot.html#散点图",
+    "href": "sciRplot.html#散点图",
+    "title": "sciRplot",
+    "section": " 散点图",
+    "text": "散点图"
+  },
+  {
+    "objectID": "sciRplot.html#柱状图",
+    "href": "sciRplot.html#柱状图",
+    "title": "sciRplot",
+    "section": " 柱状图",
+    "text": "柱状图"
+  },
+  {
+    "objectID": "sciRplot.html#箱线图",
+    "href": "sciRplot.html#箱线图",
+    "title": "sciRplot",
+    "section": " 箱线图",
+    "text": "箱线图"
   }
 ]

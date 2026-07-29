@@ -2,4 +2,44 @@
 title: "CNSplot"
 ---
 
-This is a Quarto website.
+```{r}
+#| echo: false
+
+library(pixture)
+
+cnsplot <- read.csv("files/CNSplot.csv")
+cnsplot <- cnsplot[cnsplot$link != "",]
+title <- cnsplot$title
+paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/CNSplot/", cnsplot$image, sep="")
+link <- cnsplot$link
+captions <- paste0(
+  "<div style='line-height:0.1;'>",
+  paste0("<div style='font-size:1rem;margin-bottom:0.0rem;line-height:1;color:black;'><b>", title, "</b></div>"),
+  "</div>"
+)
+```
+
+```{css}
+#| echo: false
+
+.pixgallery-caption-below {
+    background: #c8e5ba;
+    margin-top: 2px;
+}
+```
+
+```{r}
+#| echo: false
+
+pixgallery(
+  path = paths,
+  caption = captions,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```

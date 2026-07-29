@@ -20,6 +20,7 @@ format:
     css: styles.css
     toc: true
     toc-location: left
+    link-external-newwindow: true
     grid:
       sidebar-width: 200px
       body-width: 1200px

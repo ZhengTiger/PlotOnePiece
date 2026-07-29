@@ -14,7 +14,7 @@ paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/h
 link <- scirplot$link
 captions <- paste0(
   "<div style='line-height:0.1;'>",
-  paste0("<div style='font-size:1rem;margin-bottom:0.0rem;line-height:1;color:#34495e;'><b>", title, "</b></div>"),
+  paste0("<div style='font-size:1rem;margin-bottom:0.0rem;line-height:1;color:black;'><b>", title, "</b></div>"),
   "</div>"
 )
 ```
@@ -24,7 +24,7 @@ captions <- paste0(
 
 .pixgallery-caption-below {
     background: #c8e5ba;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 ```
 
@@ -46,7 +46,6 @@ pixgallery(
   link = link_line,
   h = "150px",
   w = "200px", 
-  border_radius = "10px",
   gap = "20px",
   layout = "fixed"
 )
@@ -59,7 +58,7 @@ pixgallery(
 ```{r}
 #| echo: false
 
-index <- c(6:10,71)
+index <- c(6:10)
 path_scatter <- paths[index]
 caption_scatter <- captions[index]
 link_scatter <- link[index]
@@ -69,10 +68,9 @@ pixgallery(
   caption = caption_scatter,
   caption_valign = "below",
   caption_halign = "center",
-  link = link_scatter,
-  h = "180px",
-  w = "250px", 
-  border_radius = "10px",
+  link = link_line,
+  h = "150px",
+  w = "200px", 
   gap = "20px",
   layout = "fixed"
 )
@@ -85,7 +83,7 @@ pixgallery(
 ```{r}
 #| echo: false
 
-index <- c(11:15,66)
+index <- c(11:15)
 path_bar <- paths[index]
 caption_bar <- captions[index]
 link_bar <- link[index]
@@ -95,10 +93,9 @@ pixgallery(
   caption = caption_bar,
   caption_valign = "below",
   caption_halign = "center",
-  link = link_bar,
-  h = "180px",
-  w = "250px", 
-  border_radius = "10px",
+  link = link_line,
+  h = "150px",
+  w = "200px", 
   gap = "20px",
   layout = "fixed"
 )
@@ -111,7 +108,7 @@ pixgallery(
 ```{r}
 #| echo: false
 
-index <- c(16:20,67)
+index <- c(16:20)
 path_box <- paths[index]
 caption_box <- captions[index]
 link_box <- link[index]
@@ -121,10 +118,259 @@ pixgallery(
   caption = caption_box,
   caption_valign = "below",
   caption_halign = "center",
-  link = link_box,
-  h = "180px",
-  w = "250px", 
-  border_radius = "10px",
+  link = link_line,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa chart-column >}} 直方图
+
+```{r}
+#| echo: false
+
+index <- c(21:25)
+path_hist <- paths[index]
+caption_hist <- captions[index]
+link_hist <- link[index]
+
+pixgallery(
+  path = path_hist,
+  caption = caption_hist,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_hist,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa chart-area >}} 密度图
+
+```{r}
+#| echo: false
+
+index <- c(26:30)
+path_den <- paths[index]
+caption_den <- captions[index]
+link_den <- link[index]
+
+pixgallery(
+  path = path_den,
+  caption = caption_den,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_den,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa link >}} 韦恩图
+
+```{r}
+#| echo: false
+
+index <- c(31:35)
+path_venn <- paths[index]
+caption_venn <- captions[index]
+link_venn <- link[index]
+
+pixgallery(
+  path = path_venn,
+  caption = caption_venn,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_venn,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa chart-pie >}} 饼状图
+
+```{r}
+#| echo: false
+
+index <- c(36:40)
+path_pie <- paths[index]
+caption_pie <- captions[index]
+link_pie <- link[index]
+
+pixgallery(
+  path = path_pie,
+  caption = caption_pie,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_pie,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa bacon >}} 桑基图
+
+```{r}
+#| echo: false
+
+index <- c(41:45)
+path_sankey <- paths[index]
+caption_sankey <- captions[index]
+link_sankey <- link[index]
+
+pixgallery(
+  path = path_sankey,
+  caption = caption_sankey,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_sankey,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa table-cells >}} 热力图
+
+```{r}
+#| echo: false
+
+index <- c(46:50)
+path_heat <- paths[index]
+caption_heat <- captions[index]
+link_heat <- link[index]
+
+pixgallery(
+  path = path_heat,
+  caption = caption_heat,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_heat,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa circle-nodes >}} 网络图
+
+```{r}
+#| echo: false
+
+index <- c(51:55)
+path_network <- paths[index]
+caption_network <- captions[index]
+link_network <- link[index]
+
+pixgallery(
+  path = path_network,
+  caption = caption_network,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_network,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa spinner >}} 环状图
+
+```{r}
+#| echo: false
+
+index <- c(56:60)
+path_circle <- paths[index]
+caption_circle <- captions[index]
+link_circle <- link[index]
+
+pixgallery(
+  path = path_circle,
+  caption = caption_circle,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_circle,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa list >}} 其他绘图
+
+```{r}
+#| echo: false
+
+index <- c(61:80)
+path_other <- paths[index]
+caption_other <- captions[index]
+link_other <- link[index]
+
+pixgallery(
+  path = path_other,
+  caption = caption_other,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_other,
+  h = "150px",
+  w = "200px", 
+  gap = "20px",
+  layout = "fixed"
+)
+```
+
+
+
+## {{< fa globe >}} 3D绘图
+
+```{r}
+#| echo: false
+
+index <- c(81:100)
+path_3d <- paths[index]
+caption_3d <- captions[index]
+link_3d <- link[index]
+
+pixgallery(
+  path = path_3d,
+  caption = caption_3d,
+  caption_valign = "below",
+  caption_halign = "center",
+  link = link_3d,
+  h = "150px",
+  w = "200px", 
   gap = "20px",
   layout = "fixed"
 )

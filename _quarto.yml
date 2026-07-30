@@ -9,8 +9,10 @@ website:
       - href: index.qmd
         text: Home
       - href: sciRplot.qmd
-      - href: CNSplot.qmd
       - href: sciRcolor.qmd
+      - href: CNSplot.qmd
+      - href: CNScolor.qmd
+      
       
 
 format:

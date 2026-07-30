@@ -1,0 +1,26 @@
+---
+title: "CNScolor"
+---
+
+```{r}
+#| echo: false
+
+library(pixture)
+
+scircolor <- read.csv("files/sciRcolor.csv")
+paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/", scircolor$image, sep="")
+link <- scircolor$link
+```
+
+```{r}
+#| echo: false
+
+pixgallery(
+  path = paths,
+  link = link,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```

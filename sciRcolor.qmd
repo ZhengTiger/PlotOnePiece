@@ -1,5 +1,6 @@
 ---
 title: "sciRcolor"
+toc-title: "颜色分类"
 ---
 
 ```{r}
@@ -12,12 +13,229 @@ paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/h
 link <- scircolor$link
 ```
 
+
+## 2 色
+
 ```{r}
 #| echo: false
 
+index <- c(1:5)
+path_2 <- paths[index]
+link_2 <- link[index]
+
 pixgallery(
-  path = paths,
-  link = link,
+  path = path_2,
+  link = link_2,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 3 色
+
+```{r}
+#| echo: false
+
+index <- c(6:10)
+path_3 <- paths[index]
+link_3 <- link[index]
+
+pixgallery(
+  path = path_3,
+  link = link_3,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 4 色
+
+```{r}
+#| echo: false
+
+index <- c(11:15)
+path_4 <- paths[index]
+link_4 <- link[index]
+
+pixgallery(
+  path = path_4,
+  link = link_4,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 5 色
+
+```{r}
+#| echo: false
+
+index <- c(16:20)
+path_5 <- paths[index]
+link_5 <- link[index]
+
+pixgallery(
+  path = path_5,
+  link = link_5,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 6 色
+
+```{r}
+#| echo: false
+
+index <- c(21:25)
+path_6 <- paths[index]
+link_6 <- link[index]
+
+pixgallery(
+  path = path_6,
+  link = link_6,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 7 色
+
+```{r}
+#| echo: false
+
+index <- c(26:30)
+path_7 <- paths[index]
+link_7 <- link[index]
+
+pixgallery(
+  path = path_7,
+  link = link_7,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 8 色
+
+```{r}
+#| echo: false
+
+index <- c(31:35)
+path_8 <- paths[index]
+link_8 <- link[index]
+
+pixgallery(
+  path = path_8,
+  link = link_8,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 9 色
+
+```{r}
+#| echo: false
+
+index <- c(36:40)
+path_9 <- paths[index]
+link_9 <- link[index]
+
+pixgallery(
+  path = path_9,
+  link = link_9,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 10 色
+
+```{r}
+#| echo: false
+
+index <- c(41:45)
+path_10 <- paths[index]
+link_10 <- link[index]
+
+pixgallery(
+  path = path_10,
+  link = link_10,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 多色
+
+```{r}
+#| echo: false
+
+index <- c(46:60)
+path_more <- paths[index]
+link_more <- link[index]
+
+pixgallery(
+  path = path_more,
+  link = link_more,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```
+
+
+
+## 渐变色
+
+```{r}
+#| echo: false
+
+index <- c(61:100)
+path_contin <- paths[index]
+link_contin <- link[index]
+
+pixgallery(
+  path = path_contin,
+  link = link_contin,
   gap = "20px",
   h = "276.65px",
   w = "200px", 

@@ -10,6 +10,7 @@ website:
         text: Home
       - href: sciRplot.qmd
       - href: CNSplot.qmd
+      - href: sciRcolor.qmd
       
 
 format:

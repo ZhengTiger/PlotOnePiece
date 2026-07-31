@@ -7,9 +7,9 @@ title: "CNScolor"
 
 library(pixture)
 
-scircolor <- read.csv("files/sciRcolor.csv")
-paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/", scircolor$image, sep="")
-link <- scircolor$link
+cnscolor <- read.csv("files/CNScolor.csv")
+paths <- paste("https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/CNScolor/", cnscolor$image, sep="")
+link <- cnscolor$link
 ```
 
 ```{r}

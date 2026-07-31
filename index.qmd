@@ -2,4 +2,30 @@
 title: "PlotOnePiece"
 ---
 
-开发中...
+目前，**TigerZ生信宝库**已经推出了很多科研绘图相关的资源，也受到了很多小伙伴的支持和喜爱。为了便于大家获取所有绘图资源，`PlotOnePiece`项目正式启动！`PlotOnePiece`珍藏了TigerZ生信宝库的所有绘图资源，想要我的宝藏吗？我把它们全部都放在了这里🏴‍☠️。
+
+`PlotOnePiece`目前包含了以下绘图资源，获取方式见下文：
+
+## 1. sciRplot
+
+`sciRplot`项目用于解决R语言中科研绘图的问题，包含了**100**种绘图代码（**60**种基础绘图+**40**种进
+阶绘图）。详细信息见：
+
+```{r}
+#| echo: false
+
+library(pixture)
+```
+
+```{r}
+#| echo: false
+
+pixgallery(
+  path = "",
+  link = link,
+  gap = "20px",
+  h = "276.65px",
+  w = "200px", 
+  layout = "fixed"
+)
+```

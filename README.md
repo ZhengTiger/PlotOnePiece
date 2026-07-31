@@ -7,7 +7,7 @@
 <center>
 <img src="./images/gallery/PlotOnePiece_banner.png">
 </center>
-<center>PlotOnePiece 绘图资源预览</center>
+<p align="center">PlotOnePiece 绘图资源预览</p>
 
 详细信息见下文：
 
@@ -21,7 +21,7 @@
 <img src="./images/gallery/sciRplot.png">
 </a>
 </center>
-<center>点击上方图片查看 sciRplot 详细信息</center>
+<p align="center">点击上方图片查看 sciRplot 详细信息</p>
 
 
 ## 2. sciRcolor
@@ -34,7 +34,7 @@
 <img src="./images/gallery/sciRcolor.png">
 </a>
 </center>
-<center>点击上方图片查看 sciRcolor 详细信息</center>
+<p align="center">点击上方图片查看 sciRcolor 详细信息</p>
 
 ## 3. CNSplot
 
@@ -45,7 +45,7 @@
 <img src="./images/gallery/CNSplot.png">
 </a>
 </center>
-<center>点击上方图片查看 CNSplot 详细信息</center>
+<p align="center">点击上方图片查看 CNSplot 详细信息</p>
 
 ## 4. CNScolor
 
@@ -56,8 +56,8 @@
 <a href="https://mp.weixin.qq.com/s/VVWydN_qQE-og6dfkku48w">
 <img src="./images/gallery/CNScolor.png">
 </a>
-</center>
-<center>点击上方图片查看 CNScolor 详细信息</center>
+</center> 
+<p align="center">点击上方图片查看 CNScolor 详细信息</p>
 
 ## 5. 更多
 

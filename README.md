@@ -5,8 +5,9 @@
 `PlotOnePiece`目前包含了以下绘图资源，点击每个页面中的小卡片即可跳转到对应公众号文章链接。
 
 <center>
-![PlotOnePiece 绘图资源预览](./images/gallery/PlotOnePiece_banner.png)
+<img src="./images/gallery/PlotOnePiece_banner.png">
 </center>
+<center>PlotOnePiece 绘图资源预览</center>
 
 详细信息见下文：
 
@@ -19,9 +20,8 @@
 <a href="https://mp.weixin.qq.com/s/QA_8LVqjkdg4A16zLonw4w">
 <img src="./images/gallery/sciRplot.png">
 </a>
-<p>点击上方图片查看 sciRplot 详细信息</p>
 </center>
-
+<center>点击上方图片查看 sciRplot 详细信息</center>
 
 
 ## 2. sciRcolor
@@ -33,9 +33,8 @@
 <a href="https://mp.weixin.qq.com/s/XZol4VxvHnJD_49ij3f2mg">
 <img src="./images/gallery/sciRcolor.png">
 </a>
-<p>点击上方图片查看 sciRcolor 详细信息</p>
 </center>
-
+<center>点击上方图片查看 sciRcolor 详细信息</center>
 
 ## 3. CNSplot
 
@@ -45,8 +44,8 @@
 <a href="https://mp.weixin.qq.com/s/sn8ec16NYq5cWbU5hPbuYg">
 <img src="./images/gallery/CNSplot.png">
 </a>
-<p>点击上方图片查看 CNSplot 详细信息</p>
 </center>
+<center>点击上方图片查看 CNSplot 详细信息</center>
 
 ## 4. CNScolor
 
@@ -57,8 +56,8 @@
 <a href="https://mp.weixin.qq.com/s/VVWydN_qQE-og6dfkku48w">
 <img src="./images/gallery/CNScolor.png">
 </a>
-<p>点击上方图片查看 CNScolor 详细信息</p>
 </center>
+<center>点击上方图片查看 CNScolor 详细信息</center>
 
 ## 5. 更多
 
@@ -69,5 +68,5 @@
 <br>
 
 <center>
-![](./images/gallery/Type2.png){width=75%}
+<img src="./images/gallery/Type2.png">
 </center>

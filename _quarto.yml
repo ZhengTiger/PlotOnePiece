@@ -4,6 +4,12 @@ project:
 
 website:
   title: "PlotOnePiece"
+  page-navigation: true
+  site-url: https://zhengtiger.github.io/PlotOnePiece/
+  repo-url: https://github.com/ZhengTiger/PlotOnePiece
+  repo-actions:
+    - source
+    - issue
   navbar:
     left:
       - href: index.qmd
@@ -12,14 +18,18 @@ website:
       - href: sciRcolor.qmd
       - href: CNSplot.qmd
       - href: CNScolor.qmd
-      
+    right:
+      - icon: github
+        href: https://github.com/ZhengTiger/PlotOnePiece
+  page-footer:
+    center: "Copyright @ 2026 TigerZ生信宝库 All rights reserved."
       
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: Flatly
+      dark: Darkly
     css: styles.css
     toc: true
     toc-location: left
@@ -32,4 +42,6 @@ format:
 
 execute:
   freeze: auto
+
+lang: zh
 

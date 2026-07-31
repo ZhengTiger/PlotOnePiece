@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PlotOnePiece",
-    "section": "",
-    "text": "开发中…"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "CNSplot.html",
-    "href": "CNSplot.html",
-    "title": "CNSplot",
-    "section": "",
-    "text": "This is a Quarto website."
-  },
-  {
-    "objectID": "sciRplot.html",
-    "href": "sciRplot.html",
-    "title": "sciRplot",
-    "section": "",
-    "text": ".pixgallery-caption-below {\n    background: #c8e5ba;\n}"
-  },
-  {
     "objectID": "sciRplot.html#折线图",
     "href": "sciRplot.html#折线图",
     "title": "sciRplot",
@@ -124,6 +96,55 @@
     "title": "sciRplot",
     "section": " 3D绘图",
     "text": "3D绘图"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PlotOnePiece",
+    "section": "",
+    "text": "目前，TigerZ生信宝库已经推出了很多科研绘图相关的资源，也受到了很多小伙伴的支持和喜爱。为了便于大家获取所有绘图资源，PlotOnePiece项目正式启动！PlotOnePiece珍藏了TigerZ生信宝库的所有绘图资源，想要我的宝藏吗？我把它们全部都放在了这里🏴‍☠️。\nPlotOnePiece目前包含了以下绘图资源，点击每个页面中的小卡片即可跳转到对应公众号文章链接。\n详细信息见下文："
+  },
+  {
+    "objectID": "index.html#scirplot",
+    "href": "index.html#scirplot",
+    "title": "PlotOnePiece",
+    "section": "1. sciRplot",
+    "text": "1. sciRplot\nsciRplot项目用于解决R语言中科研绘图的问题，包含了100种绘图代码（60种基础绘图+40种进 阶绘图）。详细信息见："
+  },
+  {
+    "objectID": "index.html#scircolor",
+    "href": "index.html#scircolor",
+    "title": "PlotOnePiece",
+    "section": "2. sciRcolor",
+    "text": "2. sciRcolor\nsciRcolor 项目用于解决 R 语言科研绘图中颜色选择的问题，包含了 100 种常用配色（60 种离散 色 + 40 种连续色）。详细信息见："
+  },
+  {
+    "objectID": "index.html#cnsplot",
+    "href": "index.html#cnsplot",
+    "title": "PlotOnePiece",
+    "section": "3. CNSplot",
+    "text": "3. CNSplot\nCNSplot 项目专门针对科研绘图中的高级复杂图形，包含了 50 个顶刊绘图复现。详细信息见："
+  },
+  {
+    "objectID": "index.html#cnscolor",
+    "href": "index.html#cnscolor",
+    "title": "PlotOnePiece",
+    "section": "4. CNScolor",
+    "text": "4. CNScolor\nCNScolor 项目是一个开源免费的配色项目，收集了顶刊绘图中的颜色代码，每周通过 TigerZ 生信宝库 发布推文。并且通过一个在线网站进行展示。详细信息见："
+  },
+  {
+    "objectID": "index.html#更多",
+    "href": "index.html#更多",
+    "title": "PlotOnePiece",
+    "section": "5. 更多",
+    "text": "5. 更多\n\n更多内容请扫描下方二维码\n\n\n或者微信搜索公众号 TigerZ 生信宝库\n\n\n每天分享数据可视化、生信分析相关知识哦！"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "sciRcolor.html#色-1",

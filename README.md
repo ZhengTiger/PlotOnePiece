@@ -16,7 +16,10 @@
 阶绘图）。详细信息见：
 
 <center>
-[![点击上方图片查看 sciRplot 详细信息](./images/gallery/sciRplot.png)](https://mp.weixin.qq.com/s/QA_8LVqjkdg4A16zLonw4w)
+<a href="https://mp.weixin.qq.com/s/QA_8LVqjkdg4A16zLonw4w">
+<img src="./images/gallery/sciRplot.png">
+</a>
+<p>点击上方图片查看 sciRplot 详细信息</p>
 </center>
 
 
@@ -27,9 +30,11 @@
 色 + **40** 种连续色）。详细信息见：
 
 <center>
-[![点击上方图片查看 sciRcolor 详细信息](./images/gallery/sciRcolor.png)](https://mp.weixin.qq.com/s/XZol4VxvHnJD_49ij3f2mg)
+<a href="https://mp.weixin.qq.com/s/XZol4VxvHnJD_49ij3f2mg">
+<img src="./images/gallery/sciRcolor.png">
+</a>
+<p>点击上方图片查看 sciRcolor 详细信息</p>
 </center>
-
 
 
 ## 3. CNSplot
@@ -37,10 +42,11 @@
 `CNSplot` 项目专门针对科研绘图中的高级复杂图形，包含了 **50** 个顶刊绘图复现。详细信息见：
 
 <center>
-[![点击上方图片查看 CNSplot 详细信息](./images/gallery/CNSplot.png)](https://mp.weixin.qq.com/s/sn8ec16NYq5cWbU5hPbuYg)
+<a href="https://mp.weixin.qq.com/s/sn8ec16NYq5cWbU5hPbuYg">
+<img src="./images/gallery/CNSplot.png">
+</a>
+<p>点击上方图片查看 CNSplot 详细信息</p>
 </center>
-
-
 
 ## 4. CNScolor
 
@@ -48,10 +54,11 @@
 发布推文。并且通过一个**在线网站**进行展示。详细信息见：
 
 <center>
-[![点击上方图片查看 CNScolor 详细信息](./images/gallery/CNScolor.png)](https://mp.weixin.qq.com/s/VVWydN_qQE-og6dfkku48w)
+<a href="https://mp.weixin.qq.com/s/VVWydN_qQE-og6dfkku48w">
+<img src="./images/gallery/CNScolor.png">
+</a>
+<p>点击上方图片查看 CNScolor 详细信息</p>
 </center>
-
-
 
 ## 5. 更多
 

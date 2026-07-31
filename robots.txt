@@ -1,1 +1,1 @@
-Sitemap: https://ZhengTiger.github.io/PlotOnePiece/sitemap.xml
+Sitemap: https://zhengtiger.github.io/PlotOnePiece/sitemap.xml

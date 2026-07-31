@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>sciRcolor – PlotOnePiece</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8fa5dbb603d8f69b1b2b580b08ffa9a9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a6141580aca54f71ad981bf08b5db8ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-8fa5dbb603d8f69b1b2b580b08ffa9a9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
+
+<link href="site_libs/simplelightbox-2.1.0/css/simplelightbox.css" rel="stylesheet">
+
+<script src="site_libs/simplelightbox-2.1.0/js/simplelightbox.js"></script>
+
+<link href="site_libs/pixgallery-0/css/pixgallery.css" rel="stylesheet">
+
+<script src="site_libs/pixgallery-binding-0.1.0/pixgallery.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">PlotOnePiece</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="搜索"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sciRplot.html"> 
+<span class="menu-text">sciRplot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./sciRcolor.html" aria-current="page"> 
+<span class="menu-text">sciRcolor</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./CNSplot.html"> 
+<span class="menu-text">CNSplot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./CNScolor.html"> 
+<span class="menu-text">CNScolor</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ZhengTiger/PlotOnePiece"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="切换深色模式"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">颜色分类</h2>
+   
+  <ul>
+  <li><a href="#色" id="toc-色" class="nav-link active" data-scroll-target="#色">2 色</a></li>
+  <li><a href="#色-1" id="toc-色-1" class="nav-link" data-scroll-target="#色-1">3 色</a></li>
+  <li><a href="#色-2" id="toc-色-2" class="nav-link" data-scroll-target="#色-2">4 色</a></li>
+  <li><a href="#色-3" id="toc-色-3" class="nav-link" data-scroll-target="#色-3">5 色</a></li>
+  <li><a href="#色-4" id="toc-色-4" class="nav-link" data-scroll-target="#色-4">6 色</a></li>
+  <li><a href="#色-5" id="toc-色-5" class="nav-link" data-scroll-target="#色-5">7 色</a></li>
+  <li><a href="#色-6" id="toc-色-6" class="nav-link" data-scroll-target="#色-6">8 色</a></li>
+  <li><a href="#色-7" id="toc-色-7" class="nav-link" data-scroll-target="#色-7">9 色</a></li>
+  <li><a href="#色-8" id="toc-色-8" class="nav-link" data-scroll-target="#色-8">10 色</a></li>
+  <li><a href="#多色" id="toc-多色" class="nav-link" data-scroll-target="#多色">多色</a></li>
+  <li><a href="#渐变色" id="toc-渐变色" class="nav-link" data-scroll-target="#渐变色">渐变色</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ZhengTiger/PlotOnePiece/blob/main/sciRcolor.qmd" class="toc-action"><i class="bi bi-github"></i>查看代码</a></li><li><a href="https://github.com/ZhengTiger/PlotOnePiece/issues/new" class="toc-action"><i class="bi empty"></i>反馈问题</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">sciRcolor</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="色" class="level2">
+<h2 class="anchored" data-anchor-id="色">2 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-0adb108743a175073fcd" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-0adb108743a175073fcd">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/01.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/02.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/03.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/04.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/05.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/L5No_UFI9dMNaj2ogkOH8g","https://mp.weixin.qq.com/s/ZLkxtC0N13fcg1Kxz7ZjSA","https://mp.weixin.qq.com/s/YXrCd6Hii6V7RGMMHpfpqw","https://mp.weixin.qq.com/s/V_3RB945h61PCwA1NQILIA","https://mp.weixin.qq.com/s/voPUI9nWa11Msseg16hXpA"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-1" class="level2">
+<h2 class="anchored" data-anchor-id="色-1">3 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-1f71efe5501f09aea2a4" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-1f71efe5501f09aea2a4">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/06.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/07.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/08.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/09.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/10.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/-UhdUuhjEzadpth9w9rpkQ","https://mp.weixin.qq.com/s/DJBkI474UPFPhL8Qfw15Hw","https://mp.weixin.qq.com/s/_pgcfZnWoRXFaLqo8N3pMg","https://mp.weixin.qq.com/s/Crmb_OTJLsJUtO2hi-mZlg","https://mp.weixin.qq.com/s/9Vh3Vxt3YWnhsl2b7WOluQ"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-2" class="level2">
+<h2 class="anchored" data-anchor-id="色-2">4 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-5100b60f1d5a71f14a41" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-5100b60f1d5a71f14a41">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/11.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/12.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/13.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/14.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/15.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/MUGUxplMYZ3Azjm3utBW6Q","https://mp.weixin.qq.com/s/Frd0hSKagvUscB7OyyjxPQ","https://mp.weixin.qq.com/s/cdweb5nEBFPAun3D1350Nw","https://mp.weixin.qq.com/s/OBYgIYqMeTUKQBzrl0zI0A","https://mp.weixin.qq.com/s/c5_20J933bGWq4Q7FQhbww"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-3" class="level2">
+<h2 class="anchored" data-anchor-id="色-3">5 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-bccddf5b15d22b4b0f24" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-bccddf5b15d22b4b0f24">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/16.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/17.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/18.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/19.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/20.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/E-fb7HVsxd5HqR0x9z9JCg","https://mp.weixin.qq.com/s/y9r_HhHF8EuCNMg1_2p4zQ","https://mp.weixin.qq.com/s/N2aBKB_k-deF8XWZGFqyzw","https://mp.weixin.qq.com/s/GZJM_qXfSMtn0Gskxd0zVg","https://mp.weixin.qq.com/s/GBVsT9PCDyMxg3e2q8kPeg"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-4" class="level2">
+<h2 class="anchored" data-anchor-id="色-4">6 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-3036e0cfbe720f308820" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-3036e0cfbe720f308820">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/21.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/22.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/23.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/24.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/25.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/lWLZv3A93CcjYLVXJU8M3A","https://mp.weixin.qq.com/s/E07--OnLHKWQr3DD973JmQ","https://mp.weixin.qq.com/s/x73Xlw_0L5PLXE9ZfTVXnQ","https://mp.weixin.qq.com/s/wZHVINfo0npANKgwnC0-1A","https://mp.weixin.qq.com/s/X0T5GpZvg4JYhNQBjwEbJg"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-5" class="level2">
+<h2 class="anchored" data-anchor-id="色-5">7 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-e0c8281da2b7c094e432" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-e0c8281da2b7c094e432">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/26.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/27.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/28.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/29.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/30.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/lfBN3zwv04If9zHfOJyd6Q","https://mp.weixin.qq.com/s/LxGhg_hi1IxEiXtgCcTlzg","https://mp.weixin.qq.com/s/MGltPYLfJ1PYeIwXA8-iKA","https://mp.weixin.qq.com/s/TF_Quy8hW1Vtdec6qOQM7w","https://mp.weixin.qq.com/s/Vlb-_SP6j_7LDGSJ5BHNqA"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-6" class="level2">
+<h2 class="anchored" data-anchor-id="色-6">8 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-4001b6bbab4bf3138060" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-4001b6bbab4bf3138060">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/31.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/32.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/33.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/34.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/35.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/wdVztCJUahYBScn9LGWVFg","https://mp.weixin.qq.com/s/yryOTiJbo7huUNGhGoEGew","https://mp.weixin.qq.com/s/45zEksNEIZ9SZQgqPabRdA","https://mp.weixin.qq.com/s/Iv2r1d5Bb6WsXlTOIyCN0Q","https://mp.weixin.qq.com/s/PwCzUnVdiH1gV9uaGb9cBg"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-7" class="level2">
+<h2 class="anchored" data-anchor-id="色-7">9 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-872deb160ef8f0c42e28" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-872deb160ef8f0c42e28">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/36.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/37.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/38.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/39.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/40.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/NwEi9NRqw9RT0iYOKicRSw","https://mp.weixin.qq.com/s/1p565pZs6KTzzc37f91Jxw","https://mp.weixin.qq.com/s/6xJJTzpMbPU9RFRbwCJxbw","https://mp.weixin.qq.com/s/0zm0wDZVUn49z8KINgVgAQ","https://mp.weixin.qq.com/s/s5zlHKV3vryDMBfPGXm8cQ"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="色-8" class="level2">
+<h2 class="anchored" data-anchor-id="色-8">10 色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-5e2851687260abf99eb7" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-5e2851687260abf99eb7">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/41.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/42.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/43.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/44.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/45.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/5n7Z2oScIVLpvaraUHhB9A","https://mp.weixin.qq.com/s/dwu3ZS9sZxwsgR-tH5ibkQ","https://mp.weixin.qq.com/s/2QNtXZo0hzs7kXWw21JZ2w","https://mp.weixin.qq.com/s/knB4Nxm8iMBC3FzpkdPryA","https://mp.weixin.qq.com/s/sa8Dhi8MDQAVSu0-GXZCLA"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="多色" class="level2">
+<h2 class="anchored" data-anchor-id="多色">多色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-01a1aef913b05ba6b926" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-01a1aef913b05ba6b926">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/46.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/47.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/48.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/49.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/50.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/51.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/52.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/53.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/54.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/55.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/56.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/57.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/58.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/59.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/60.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/C8UGOLGgkcSUefpLwPAjuw","https://mp.weixin.qq.com/s/k98eRpktfXXOQ_IL6HFmDA","https://mp.weixin.qq.com/s/O4Xp0_Cfsfvm4L7pxerxBg","https://mp.weixin.qq.com/s/jkZqUjtaMaBmOktGkmQ8lg","https://mp.weixin.qq.com/s/FWJA7vCzyR9C8-hl2uxLig","https://mp.weixin.qq.com/s/zXttIBBoBgmy-Ml2q-ZWwg","https://mp.weixin.qq.com/s/gBqKylWLkHxTgKP__tUGaA","https://mp.weixin.qq.com/s/dmaZfdhPH4RTnrjCWlb8Fg","https://mp.weixin.qq.com/s/nMtO3_ehoMw1C-4_HeiSCg","https://mp.weixin.qq.com/s/OSEPAkQYDyugicpzBhCEQQ","https://mp.weixin.qq.com/s/aV2x1TBNkIp8uCgh9jCXKg","https://mp.weixin.qq.com/s/Y89Gj_9zPPTj89qan4tmEA","https://mp.weixin.qq.com/s/xV8qS7TMTiF66Jmu4hcWtg","https://mp.weixin.qq.com/s/E0UEbBnUZH_OyRWTZiIVLw","https://mp.weixin.qq.com/s/PNOLhcSRJPESRIhuST9pOA"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="渐变色" class="level2">
+<h2 class="anchored" data-anchor-id="渐变色">渐变色</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-708730bfdd8a6ccaf364" style="width:100%;height:100%;" class="pixgallery html-widget "></div>
+<script type="application/json" data-for="htmlwidget-708730bfdd8a6ccaf364">{"x":{"path":["https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/61.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/62.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/63.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/64.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/65.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/66.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/67.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/68.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/69.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/70.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/71.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/72.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/73.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/74.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/75.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/76.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/77.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/78.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/79.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/80.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/81.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/82.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/83.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/84.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/85.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/86.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/87.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/88.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/89.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/90.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/91.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/92.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/93.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/94.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/95.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/96.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/97.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/98.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/99.png","https://raw.githubusercontent.com/ZhengTiger/PlotOnePiece/refs/heads/main/images/sciRcolor/100.png"],"caption":[],"caption_valign":"none","caption_halign":"left","link":["https://mp.weixin.qq.com/s/6QrN-6NH-vUf9TAbLZSbvw","https://mp.weixin.qq.com/s/emf7jZ-UPdv0nRkmSTdnEQ","https://mp.weixin.qq.com/s/fqJ7OFBSdBDG5M5U_AxK4w","https://mp.weixin.qq.com/s/5sLihr1o05Jw_pB5rxXNbg","https://mp.weixin.qq.com/s/mxpLXwduK9N1_hXcTrOF5g","https://mp.weixin.qq.com/s/hr455iwbO-SYfMYED5GGnA","https://mp.weixin.qq.com/s/9zJOZt8RU6eWpHaGAhrgqg","https://mp.weixin.qq.com/s/BCsHx7jLJzLyX8HJYEz-lw","https://mp.weixin.qq.com/s/mzig1A4NXwzwDanMPMLnag","https://mp.weixin.qq.com/s/UJFymsV19TmOP093mk7OnA","https://mp.weixin.qq.com/s/4EG3XXP4gF4zsECMETun9Q","https://mp.weixin.qq.com/s/zz_Dm-0v90-HV2dOkps_AA","https://mp.weixin.qq.com/s/KS6UlWu-I4MRcdujgq5U9g","https://mp.weixin.qq.com/s/2Lo8-kTTXCEY-HtwnUFMGw","https://mp.weixin.qq.com/s/8y3aolzQAhXEsdEnwPbgYw","https://mp.weixin.qq.com/s/P-hbuqNXrGvSp6TgHe-TTw","https://mp.weixin.qq.com/s/boYUGpor_1mmGXLwS-KxuA","https://mp.weixin.qq.com/s/7jzUkRMdK-rh8SIAhiQfnw","https://mp.weixin.qq.com/s/DAljF44_ZH1xODkY1a16RA","https://mp.weixin.qq.com/s/gC6laLhSz51cKvZt3GD0KQ","https://mp.weixin.qq.com/s/Z_Jjja-QxnyzmF5GpgD9eA","https://mp.weixin.qq.com/s/uEtGnErlIi9mHghgQZUn0w","https://mp.weixin.qq.com/s/DhEN9-DvTHYVA9ZSfFcGwQ","https://mp.weixin.qq.com/s/-t0F8PM5BV4ATnugb1Qx-Q","https://mp.weixin.qq.com/s/vnsC4EktAw4IbPRhMV5elg","https://mp.weixin.qq.com/s/E5Qg6oXIYfQuDVcWj7dT6A","https://mp.weixin.qq.com/s/p5rU1uRnwKGVKaDLaQyJzQ","https://mp.weixin.qq.com/s/v1iH3iy26xoMM8oTeG-0bw","https://mp.weixin.qq.com/s/od-yz7eXBVI6nQqECp_khw","https://mp.weixin.qq.com/s/_a3HKTw1u5rg3vKfBRYTSQ","https://mp.weixin.qq.com/s/wiSfq-9DyyaI8weZyFe2jQ","https://mp.weixin.qq.com/s/kVpJZHHB_xRXQBqztkQn5w","https://mp.weixin.qq.com/s/FpXui-Wks5XzzN-g14R3dg","https://mp.weixin.qq.com/s/zGoH4UPyn55YFVNdpRtDow","https://mp.weixin.qq.com/s/3nZU0gx5O3HIgN0ML7aIRQ","https://mp.weixin.qq.com/s/ddhXGjMg_BFnieQTjR-Bvg","https://mp.weixin.qq.com/s/qSYtAT8ISvV1P6sqiL4-YQ","https://mp.weixin.qq.com/s/_ueLCqNUE6JsnafJIKm52w","https://mp.weixin.qq.com/s/RSoe2jLu6cNngMCJMIV9cQ","https://mp.weixin.qq.com/s/CqjLGErA7TzQhW_8yJOvrQ"],"h":"276.65px","w":"200px","gap":"20px","border_radius":"0px","layout":"fixed","shuffle":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已复制");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已复制");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/zhengtiger\.github\.io\/PlotOnePiece\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright @ 2026 TigerZ生信宝库 All rights reserved.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ZhengTiger/PlotOnePiece/blob/main/sciRcolor.qmd" class="toc-action"><i class="bi bi-github"></i>查看代码</a></li><li><a href="https://github.com/ZhengTiger/PlotOnePiece/issues/new" class="toc-action"><i class="bi empty"></i>反馈问题</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
